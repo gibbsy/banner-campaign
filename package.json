@@ -1,0 +1,32 @@
+{
+  "name": "H5",
+  "version": "0.0.1",
+  "main": "index.html",
+  "keywords": [
+    "banner",
+    "html"
+  ],
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-filesize": "0.0.6",
+    "gulp-header": "^1.8.12",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-minify-inline": "^0.2.1",
+    "gulp-open": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.6",
+    "gulp-watch": "^4.3.4",
+    "gulp-zip": "^3.0.2",
+    "imagemin-pngquant": "^5.0.0",
+    "run-sequence": "^1.1.2"
+  },
+  "dependencies": {
+    "yargs": "^11.1.0"
+  }
+}

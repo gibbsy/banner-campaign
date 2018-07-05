@@ -14,17 +14,17 @@
 
 * Banner folder structure must follow templates :
 
-|-- banners
-    |-- 300x250
-        |-- dev
-            |-- index.html
-            |-- base.js *compiled to script.js*
-            |-- style.scss *compiled to style.css*
-            |-- assets
-                |-- *.png, *.jpg, *.svg, *.gif
-            |-- lib
-                |-- *.js
-        |-- dist
++-- banners
+|   +-- 300x250
+|       +-- dev
+|           +-- index.html
+|           +-- base.js *compiled to script.js*
+|           +-- style.scss *compiled to style.css*
+|           +-- assets
+|               +-- *.png, *.jpg, *.svg, *.gif
+|           +-- lib
+|               +-- *.js
+|       +-- dist
 
 ## Dev workflow features
 

@@ -1,20 +1,22 @@
-# HTML5 Banner workflow Gulp, SCSS, Uglify (ES5)
+# HTML5 Banner workflow Gulp, SCSS, livereload, Uglify (ES5)
 
 ## Get started
 
-1. $ npm install -g gulp
+1. `$ npm install -g gulp`  
 
-1. git clone https://github.com/gibbsy/banner-campaign 
+1. `git clone https://github.com/gibbsy/banner-campaign your-directory-name`
 
-1. $ npm install
+1. `$ cd your-directory-name`
 
-1. Create a **banners/** directory to hold your banner code
+1. `$ npm install`
+
+1. `$ mkdir banners` *build your banners in here*
 
 ## Important things to note
 
 * Templates for banner dev are available in **templates/**
 
-* Banner folder structure must follow templates:
+* Banner folder structure must follow templates ie:
 
   * Onpage banner
 
@@ -60,7 +62,7 @@
 
 * Some useful SASS mixins are included in **mixins/** eg *reset.scss*
 
-* ES6 is not supported at this point due to filesize impact of necessary polyfills
+* ES6 is not supported at this point due to filesize impact of necessary [polyfills (106kb minified)](https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js)
 
 * In the absence of ES6 modules you can @import external js files - thanks to https://github.com/nambo/gulp-js-import
 

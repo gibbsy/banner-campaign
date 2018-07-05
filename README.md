@@ -10,9 +10,13 @@
 
 1. Create a **banners/** directory to hold your banner code
 
+## Important things to note
+
 * Templates for banner dev are available in **templates/**
 
-* Banner folder structure must follow templates :
+* Banner folder structure must follow templates:
+
+  * Onpage banner
 
 ```
 |-- banners
@@ -20,12 +24,34 @@
         |-- dev
             |-- index.html
             |-- base.js *compiled to script.js*
+            |-- manifest.js *flashtalking platform specific*
             |-- style.scss *compiled to style.css*
             |-- assets
                 |-- *.png, *.jpg, *.svg, *.gif
             |-- lib
                 |-- *.js
         |-- dist
+```
+
+  * Richload banner (Flashtalking)
+
+  ```
+|-- banners
+    |-- 300x250
+        |-- base
+            |-- index.html
+            |-- manifest.js *flashtalking platform specific*
+            |-- style.css 
+        |-- richload
+            |-- dev
+                |-- index.html
+                |-- base.js *compiled to script.js using gulp-js-import*
+                |-- style.scss *compiled to style.css*
+                |-- assets
+                    |-- *.png, *.jpg, *.svg, *.gif
+                |-- lib
+                    |-- *.js
+            |-- dist
 ```
 
 ## Dev workflow features

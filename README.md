@@ -10,7 +10,7 @@
 
 1. `$ npm install`
 
-1. `$ mkdir banners` **build your banners in here**
+1. `$ mkdir banners` **- build your banners in here**
 
 ## Important things to note
 

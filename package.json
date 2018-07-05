@@ -1,11 +1,17 @@
 {
-  "name": "H5",
-  "version": "0.0.1",
+  "name": "HTML5 Banner Workflow",
+  "author": "Andy Gillon",
+  "version": "1.0",
   "main": "index.html",
   "keywords": [
     "banner",
-    "html"
+    "html5",
+    "Gulp"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gibbsy/banner-campaign"
+  },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
@@ -25,9 +31,7 @@
     "gulp-watch": "^4.3.4",
     "gulp-zip": "^3.0.2",
     "imagemin-pngquant": "^5.0.0",
-    "run-sequence": "^1.1.2"
-  },
-  "dependencies": {
+    "run-sequence": "^1.1.2",
     "yargs": "^11.1.0"
   }
 }

@@ -70,6 +70,10 @@
 
 * $ gulp --root=*insert banner directory name*
 
+* **Gulp watch** task watches your .scss files (including mixin folder) and compiles and reloads automatically
+
+* Livereload also performed when .html or .js files change 
+
 ## Build your banner for production
 
 * $ gulp b --root=*insert banner directory name*

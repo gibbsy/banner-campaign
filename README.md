@@ -1,6 +1,6 @@
-#HTML5 Banner workflow Gulp, SCSS, Uglify
+# HTML5 Banner workflow Gulp, SCSS, Uglify
 
-##Get started
+## Get started
 
 1. $ npm install -g gulp
 
@@ -12,11 +12,11 @@
 
 1. Templates for banner dev are available in **templates/**
 
-##Run your banner locally
+## Run your banner locally
 
 1. $ gulp --root=*insert banner directory name*
 
-##Build your banner for production
+## Build your banner for production
 
 1. $ gulp b --root=*insert banner directory name*
 
@@ -24,7 +24,7 @@
 
 1. $ gulp b
 
-##Other features
+## Other features
 
 1. The workflow uses SASS so make use of its powers *mixins, variables etc*
 

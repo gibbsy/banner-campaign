@@ -64,7 +64,11 @@
 
 * ES6 is not supported at this point due to filesize impact of necessary [polyfills (106kb minified)](https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js)
 
-* In the absence of ES6 modules you can @import external js files - thanks to https://github.com/nambo/gulp-js-import
+* In the absence of ES6 modules you can @import external js files into your base.js - thanks to https://github.com/nambo/gulp-js-import
+
+  * **The resulting script.js file will be generated in the dev folder**
+  
+  * Do not load base.js in your index.html - load script.js (even if you don't use @import feature)
 
 * I keep reusable utils and classes handy in **utils/**
 

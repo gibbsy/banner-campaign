@@ -19,6 +19,7 @@ var filesize = require('gulp-filesize');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var argv = require('yargs').argv;
+var jsImport = require('gulp-js-import');
 
 var bannersPath = 'banners/'
 
@@ -43,8 +44,9 @@ function serveBanner(dir) {
   });
 
   gulp.task('watch', function() {
-    gulp.watch([DIR_ROOT + '/dev/*.html', DIR_ROOT + '/dev/*.js'], ['basic-reload']);
-    gulp.watch([DIR_ROOT + '/dev/*.scss'], ['sass:dev']);
+    gulp.watch([DIR_ROOT + '/dev/*.html'], ['basic-reload']);
+    gulp.watch(['utils/*.js', DIR_ROOT + '/dev/*.js'], ['import:dev']);
+    gulp.watch(['mixins/*.scss', DIR_ROOT + '/dev/*.scss'], ['sass:dev']);
   });
 
   gulp.task('connect', function() {
@@ -77,10 +79,23 @@ function serveBanner(dir) {
       .pipe(autoprefixer('last 5 versions'))
       .pipe(rename('style.css'))
       .pipe(gulp.dest(DIR_ROOT + '/dev'))
-      .pipe(connect.reload());;
+      .pipe(connect.reload());
   });
 
-  runSequence('sass:dev', ['connect'], ['open', 'watch']);
+  // implement js import plugin for gulp
+  // allows import external js files for code modularization (ES5)
+
+  gulp.task('import:dev', function () {
+    return gulp.src(DIR_ROOT + '/dev/base.js')
+      .pipe(jsImport({ hideConsole: false }))
+      .pipe(rename('script.js'))
+      .pipe(gulp.dest(DIR_ROOT + '/dev'))
+      .pipe(connect.reload());
+  }); 
+
+  runSequence(['sass:dev'], ['import:dev'], ['connect'], ['open', 'watch']);
+  
+  //runSequence(['sass:dev'], ['connect'], ['open', 'watch']);
 }
 
 function buildBanner(dir, bannerType) {
@@ -136,7 +151,7 @@ function buildBanner(dir, bannerType) {
         outputStyle: "compressed"
       }).on('error', sass.logError))
       .pipe(autoprefixer({
-        browsers: ['last 5 versions'],
+        browsers: ['last 10 versions'],
         cascade: false
       }))
       .pipe(rename('style.css'))
@@ -172,7 +187,7 @@ function buildBanner(dir, bannerType) {
 
   // png, js and css excluded - piped over by other tasks
   gulp.task('copy-to-dist-folder_' + dir, function() {
-    return gulp.src([DIR_ROOT + '/dev/*', DIR_ROOT + '/dev/**/*', DIR_ROOT + '/dev/**/**/*', '!' + DIR_ROOT + '/dev/*.scss', '!richload/dev/*.css', '!' + DIR_ROOT + '/dev/assets/*.png'], { base: DIR_ROOT + '/dev/' })
+    return gulp.src([DIR_ROOT + '/dev/*', DIR_ROOT + '/dev/**/*', DIR_ROOT + '/dev/**/**/*', '!' + DIR_ROOT + '/dev/base.js', '!' + DIR_ROOT + '/dev/*.scss', '!richload/dev/*.css', '!' + DIR_ROOT + '/dev/assets/*.png'], { base: DIR_ROOT + '/dev/' })
       .pipe(gulp.dest(DIR_ROOT + '/dist'));
   });
 
@@ -183,7 +198,13 @@ function buildBanner(dir, bannerType) {
       .pipe(filesize())
       .pipe(gulp.dest('_delivery'));
   });
-  runSequence('del_' + dir, 'copy-to-dist-folder_' + dir, 'image-minimise_' + dir, ['minify-html_' + dir], ['minify-inline_' + dir, 'sass:dist_' + dir], 'uglify:dist_' + dir, 'compress_' + dir);
+  gulp.task('import:dist_' + dir, function () {
+    return gulp.src(DIR_ROOT + '/dev/base.js')
+      .pipe(jsImport({ hideConsole: true }))
+      .pipe(rename('script.js'))
+      .pipe(gulp.dest(DIR_ROOT + '/dev'));
+  }); 
+  runSequence('del_' + dir, 'copy-to-dist-folder_' + dir, 'image-minimise_' + dir, ['minify-html_' + dir], ['minify-inline_' + dir, 'sass:dist_' + dir, 'import:dist_' + dir], 'uglify:dist_' + dir, 'compress_' + dir);
 }
 
 function buildRichBanner(dir) {

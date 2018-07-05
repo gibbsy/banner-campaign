@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@import '../../../mixins/mixins.scss';
+@import '../../../mixins/style_300x250.scss';
+
+.gradient {
+    @include abs100();
+    @include grad_overlay(yellow);
+}
+
+.gradient-solid {
+    @include abs100();
+    @include grad_full(yellow);
+    opacity: 0;
+}

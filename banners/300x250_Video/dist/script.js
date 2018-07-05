@@ -1,1 +1,0 @@
-function init(){function n(){e=!0,i.addClass("off"),o[0].restart()}var i=$("#replay"),e=!0,o=myFT.$("#ad-vid");o[0].loop=!1,o.on("ended",function(){e=!1,i.removeClass("off")}),i.on("click",function(){n()}),document.addEventListener("visibilitychange",function(){!document.hidden&&o[0].paused&&!0===e&&o[0].play()})}

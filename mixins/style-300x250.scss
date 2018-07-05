@@ -1,0 +1,73 @@
+@import 'reset';
+@import 'mixins';
+
+$width: 300px;
+$height: 250px;
+$hMid: $width/2;
+$vMid: $height/2;
+$copyWidth: 150px;
+
+@import 'base';
+
+#video-container {
+    @include abs100();
+    #vid {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#copy-container {
+    @include abs100();
+    opacity: 0;
+    background: url('assets/gradient.jpg') $lightGrey center / $width $height no-repeat;
+    .copy-block {
+        position: absolute;
+        width: $copyWidth;
+        display: block;
+        top: 45px;
+        left: ($width - $copyWidth)/2;
+        .copyline {
+            width: 100%;
+            display: block;
+            opacity: 0;
+            margin-top: 2px;
+            &:first-child {
+                margin-top: 0;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    #logo {
+        position: absolute;
+        width: $copyWidth;
+        left: ($width - $copyWidth)/2;
+        display: block;
+        bottom: 42px;
+        opacity: 0;
+        img {
+            width: 90%;
+        }
+    }
+}
+
+#logo-intro-wrapper {
+    @include abs100();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('assets/gradient.jpg') $lightGrey center / $width $height no-repeat;
+    #logo-intro {
+        position: relative;
+        display: block;
+        transform-origin: 50% 50%;
+        width: 60%;
+        img {
+            display: block;
+            flex-shrink: 1;
+            width: 100%;
+        }
+    }
+}

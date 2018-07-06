@@ -1,16 +1,13 @@
 {
-  "name": "HTML5 Banner Workflow",
+  "name": "gulp-banner-workflow",
   "author": "Andy Gillon",
+  "description": "HTML5 banner workflow using gulp, SASS, livereload and all that good stuff",
   "version": "1.0",
   "keywords": [
     "banner",
     "html5",
     "Gulp"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gibbsy/banner-campaign"
-  },
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",

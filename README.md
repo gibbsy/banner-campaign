@@ -74,7 +74,7 @@
 
 ## Run your banner locally
 
-* $ gulp --root=*insert banner directory name*
+* $ gulp --root=*banner-directory-name*
 
 * **Gulp watch** task watches your .scss files (including mixin folder) and compiles and reloads automatically
 
@@ -82,14 +82,14 @@
 
 ## Build your banner for production
 
-* $ gulp b --root=*insert banner directory name*
+* $ gulp b --root=*banner-directory-name*
 
-* Your uglified, minified banner will be zipped up and waiting in the _delivery folder
+* Your uglified, minified banner will be zipped up and waiting in the **_delivery** directory
 
-## Build all the banners in the banner directory
+## Build all the banners in the banners directory
 
 * $ gulp b
 
-* Your uglified, minified banners will be zipped up and waiting in the _delivery folder
+* Your uglified, minified banners will be zipped up and waiting in the **_delivery** directory
 
 :beers:

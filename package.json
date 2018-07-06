@@ -2,7 +2,7 @@
   "name": "gulp-banner-workflow",
   "author": "Andy Gillon",
   "description": "HTML5 banner workflow using gulp, SASS, livereload and all that good stuff",
-  "version": "1.0",
+  "version": "1",
   "keywords": [
     "banner",
     "html5",

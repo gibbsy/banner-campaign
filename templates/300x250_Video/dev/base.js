@@ -19,12 +19,6 @@ Zepto(function ($) {
             { src: 'logo.png', id: 'logo', append: 'logo' }
         ];
 
-    function bannerInit() {
-        loader = new createjs.LoadQueue(false);
-        loader.addEventListener('complete', appendImages);
-        loader.loadManifest(manifest, true, 'assets/');
-    }
-
    // @import '../../../utils/bannerInit.js';
 
     function animate() {

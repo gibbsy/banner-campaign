@@ -25,7 +25,7 @@ Zepto(function ($) {
         loader.loadManifest(manifest, true, 'assets/');
     }
 
-   // @import '../../../utils/appendImages.js';
+   // @import '../../../utils/bannerInit.js';
 
     function animate() {
         var video = $('#video-container');
